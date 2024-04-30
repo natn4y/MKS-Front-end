@@ -1,7 +1,10 @@
+import { ProductCard } from '@/components/productCard'
+import style from './home.module.scss'
+
 export default function Home() {
   return (
-    <main>
-      <h1>Hello</h1>
+    <main className={style.container}>
+      <ProductCard />
     </main>
   )
 }
