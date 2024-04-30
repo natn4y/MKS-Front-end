@@ -10,7 +10,7 @@ export function ProductCard() {
           </div>
           <div className={styles.wrap_price}>
             <h1 className={styles.title}>Apple Watch Series 4 GPS</h1>
-            <div className={styles.price}>R$ 399</div>
+            <p className={styles.price}>R$ 399</p>
           </div>
           <p className={styles.subtitle}>
             Redesigned from scratch and completely revised.
