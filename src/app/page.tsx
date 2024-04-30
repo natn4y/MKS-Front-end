@@ -1,8 +1,7 @@
+import globals from './globals.module.scss'
 
 export default function Home() {
   return (
-    <main>
-      <p>test</p>
-    </main>
-  );
+    <h1 style={{ color: globals.primaryColor }}>Hello, Next.js!</h1>
+  )
 }
