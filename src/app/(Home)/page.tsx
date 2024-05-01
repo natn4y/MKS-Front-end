@@ -11,7 +11,7 @@ interface Product {
   description: string;
 }
 
-const Home: React.FC = (product) => {
+export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
@@ -37,6 +37,4 @@ const Home: React.FC = (product) => {
       </div>
     </main>
   );
-};
-
-export default Home;
+}

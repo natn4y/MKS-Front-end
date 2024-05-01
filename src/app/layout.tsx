@@ -8,6 +8,7 @@ import { Header } from '@/components/Header';
 import Footer from '@/components/Footer';
 import MenuAside from '@/components/AsideMenu';
 import { CartProvider } from '@/contexts/CartContext';
+import { ShoppingCartProvider } from '@/contexts/AsideMenuContext';
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -23,13 +24,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <CartProvider>
-        <body className={`${montserrat.className}`}>
-          <Toaster />
-          <MenuAside />
-          <Header />
-          {children}
-          <Footer />
-        </body>
+        <ShoppingCartProvider>
+          <body className={`${montserrat.className}`}>
+            <Toaster />
+            <MenuAside />
+            <Header />
+            {children}
+            <Footer />
+          </body>
+        </ShoppingCartProvider>
       </CartProvider>
     </html>
   );

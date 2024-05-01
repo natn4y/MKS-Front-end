@@ -3,13 +3,14 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './asideMenu.module.scss';
 import { useCart } from '@/contexts/CartContext';
+import { useShoppingCart } from '@/contexts/AsideMenuContext';
 
 const MenuAside: React.FC = () => {
   const { cartItems, total, setCartItems } = useCart();
-  const [isOpen, setIsOpen] = useState(true);
+  const { isOpen, toggleCart } = useShoppingCart();
 
   const handleCloseMenu = () => {
-    setIsOpen(false);
+    toggleCart();
   };
 
   const handleDeleteItem = (idToDelete: number) => {
@@ -43,6 +44,10 @@ const MenuAside: React.FC = () => {
     setCartItems(updatedItems);
     localStorage.setItem('cartItems', JSON.stringify(updatedItems));
   };
+
+  const handleBuy = () => {
+    alert(JSON.stringify(cartItems));
+  }
 
   return (
     <AnimatePresence>
@@ -95,7 +100,7 @@ const MenuAside: React.FC = () => {
               <p className={styles.Firstbtn}>R$ {total.toFixed(2)}</p>
             </div>
           </motion.div>
-          <button className={styles.Lastbtn}>Finalizar Compra</button>
+          <button onClick={handleBuy} className={styles.Lastbtn}>Finalizar Compra</button>
         </motion.div>
       )}
     </AnimatePresence>
