@@ -15,7 +15,6 @@ interface ProductProps {
 }
 
 export function ProductCard({ product }: ProductProps) {
-  const [isAdded, setIsAdded] = useState(false);
   const { addToCart } = useCart();
   const { setIsOpen } = useShoppingCart();
 
@@ -27,7 +26,6 @@ export function ProductCard({ product }: ProductProps) {
       photo: product.photo,
       price: product.price,
     });
-    setIsAdded(true);
     toast.success("Produto adicionado ao carrinho!");
     setIsOpen(true);
   };

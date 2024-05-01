@@ -128,7 +128,7 @@
   display: flex;
   align-items: center;
   padding: 5px;
-  gap: 20px; /* Aumentei o gap para compensar */
+  gap: 20px;
   border: solid 1px #BFBFBF;
   border-radius: 5px;
 
@@ -138,7 +138,7 @@
   }
 
   @media only screen and (max-width: 767px) {
-    gap: 10px; /* Ajuste para dispositivos menores */
+    gap: 10px;
   }
 }
 
@@ -153,7 +153,7 @@
   max-height: 60vh;
   overflow-y: scroll;
   -ms-overflow-style: none;
-  scrollbar-width: none; /* Esconde a barra de rolagem no Firefox */
+  scrollbar-width: none;
   overflow-x: hidden;
   &::-webkit-scrollbar {
     display: none;
