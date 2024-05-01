@@ -4,6 +4,7 @@ import React, { createContext, useState, useContext, ReactNode } from 'react';
 interface ShoppingCartContextType {
   isOpen: boolean;
   toggleCart: () => void;
+  setIsOpen: any;
 }
 
 const ShoppingCartContext = createContext<ShoppingCartContextType | undefined>(undefined);
@@ -16,7 +17,7 @@ export const ShoppingCartProvider: React.FC<{ children: ReactNode }> = ({ childr
   };
 
   return (
-    <ShoppingCartContext.Provider value={{ isOpen, toggleCart }}>
+    <ShoppingCartContext.Provider value={{ isOpen, toggleCart, setIsOpen }}>
       {children}
     </ShoppingCartContext.Provider>
   );

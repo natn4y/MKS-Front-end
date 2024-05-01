@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styles from './productCard.module.scss';
 import { useCart } from '@/contexts/CartContext';
 import toast from 'react-hot-toast';
+import { useShoppingCart } from '@/contexts/AsideMenuContext';
 
 interface ProductProps {
   product: {
@@ -16,6 +17,7 @@ interface ProductProps {
 export function ProductCard({ product }: ProductProps) {
   const [isAdded, setIsAdded] = useState(false);
   const { addToCart } = useCart();
+  const { setIsOpen } = useShoppingCart();
 
   const handleAddToCart = () => {
     addToCart({
@@ -27,6 +29,7 @@ export function ProductCard({ product }: ProductProps) {
     });
     setIsAdded(true);
     toast.success("Produto adicionado ao carrinho!");
+    setIsOpen(true);
   };
 
   return (
