@@ -1,0 +1,174 @@
+.menuAside {
+  position: fixed;
+  top: 0;
+  right: -480px;
+  width: 480px;
+  height: 100%;
+  color: white;
+  background: #0F52BA;
+  border-left: 1px solid #0F52BA;
+  z-index: 1000;
+  transition: right 0.3s ease;
+  box-shadow: -5px 0 6px 0 rgba(0, 0, 0, 0.13);
+  padding: 24px 0 0 0;
+
+  h2 {
+    max-width: 220px;
+  }
+
+  li {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+  }
+
+  ul {
+    margin-bottom: 95px;
+  }
+
+  ul li {
+    position: relative;
+    margin-top: 34px;
+    color: black;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  ul li  p {
+    color: black;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .menuAside {
+    width: 101vw;
+  }
+}
+
+.menuAside.open {
+  right: 0;
+}
+
+.closeButton {
+  position: absolute;
+  top: 48px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+
+  i {
+    margin-left: 5px;
+  }
+
+  @media only screen and (max-width: 767px) {
+    & {
+      top: 50px;
+      right: 30px;
+    }
+  }
+}
+
+.menuContent {
+  padding: 20px;
+
+  h2 {
+    margin-top: 0;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 10px;
+    }
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    bottom: 100px;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  .Firstbtn {
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  ul .Lastbtn:last-child {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+    padding: 25px;
+    color: white;
+    background: black;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.increment {
+  position: relative;
+  top: -15px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  gap: 20px; /* Aumentei o gap para compensar */
+  border: solid 1px #BFBFBF;
+  border-radius: 5px;
+
+  p {
+    cursor: pointer;
+    user-select: none;
+  }
+
+  @media only screen and (max-width: 767px) {
+    gap: 10px; /* Ajuste para dispositivos menores */
+  }
+}
+
+.divider {
+  width: 1px;
+  height: 25px;
+  background-color: rgb(197, 197, 197);
+}
+
+
+.cartList {
+  max-height: 60vh;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.Lastbtn {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 25px;
+  color: white;
+  background: black;
+  font-size: 22px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}

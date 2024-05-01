@@ -1,8 +1,11 @@
+'use client'
 import Link from 'next/link'
 import header from './header.module.scss'
-import Image from 'next/image'
+import { useCart } from '@/contexts/CartContext';
 
 export function Header() {
+  const { total, } = useCart();
+
   return (
     <nav className={header.container}>
       <Link href={'/'} className={header.logo_container}>
@@ -13,7 +16,7 @@ export function Header() {
         <div>
           <img width={19} height={19} src={'/assets/cartIcon.svg'} alt='logo' />
         </div>
-        <p>0</p>
+        <p>{total.toFixed(2)}</p>
       </div>
     </nav>
   )

@@ -1,5 +1,5 @@
 .container {
-  max-width: 217px;
+  max-width: 232px;
   max-height: auto;
   position: relative;
   width: 100%;
@@ -13,16 +13,12 @@
   height: 235px;
   display: flex;
   flex-direction: column;
-  padding: 0 15px;
+  padding: 0 6px;
 }
 
 @media screen and (max-width: 768px) {
   .container {
     max-width: none;
-  }
-
-  .container_wrap {
-    height: auto;
   }
 }
 
@@ -35,6 +31,7 @@
 .title {
   margin-top: 15px;
   max-width: 100%;
+  min-height: 57px;
   color: #2C2C2C;
   font-size: 16px;
   font-weight: normal;
@@ -58,8 +55,12 @@
 
 
 .buy_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
   position: relative;
-  bottom:  -5px;
+  bottom:  -20px;
   width: calc(100%);
   left: 50%;
   transform: translateX(-50%);
@@ -80,7 +81,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 60px;
+  min-width: 93px;
   padding: 5px;
   top: 20px;
   color: white;
@@ -96,10 +97,10 @@
 .wrap_price {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 4px;
 
   @media screen and (max-width: 768px) {
     display: flex;
-    flex-wrap: wrap;
   }
 }

@@ -1,14 +1,42 @@
-import { ProductCard } from '@/components/ProductCard';
+'use client'
+import { useEffect, useState } from 'react';
 import style from './home.module.scss';
+import { ProductCard } from '@/components/ProductCard';
 
-export default function Home() {
+interface Product {
+  id: number;
+  name: string;
+  price: number;
+  photo: string;
+  description: string;
+}
+
+const Home: React.FC = (product) => {
+  const [products, setProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch('https://mks-frontend-challenge-04811e8151e6.herokuapp.com/api/v1/products?page=1&rows=8&sortBy=id&orderBy=DESC');
+        const data = await response.json();
+        setProducts(data.products);
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
   return (
     <main>
       <div className={style.container}>
-        <ProductCard />
-        <ProductCard />
+        {products.map(product => (
+          <ProductCard key={product.id} product={product} />
+        ))}
       </div>
-      <div style={{ minHeight: '33vh' }}></div>
     </main>
   );
-}
+};
+
+export default Home;

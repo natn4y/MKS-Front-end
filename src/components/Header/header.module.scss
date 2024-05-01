@@ -28,7 +28,7 @@
   }
 
   p:nth-child(2) {
-    margin-top: 10px;
+    margin-top: 15px;
   }
 }
 
@@ -44,6 +44,11 @@
   font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
+
+  p {
+    min-width: 90px;
+    text-align: center;
+  }
 
   img {
     margin-top: 5px;
