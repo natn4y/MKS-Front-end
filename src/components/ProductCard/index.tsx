@@ -53,3 +53,23 @@ export function ProductCard({ product }: ProductProps) {
     </div>
   );
 }
+
+export function ProductCardSkeleton() {
+  return (
+    <div className={`${styles.container} ${styles.skeleton}`}>
+      <div className={styles.container_wrap}>
+        <div>
+          <div className={styles.image_container}>
+            <div className={`${styles.image_placeholder} ${styles.Image_skeleton}`} />
+          </div>
+          <div className={styles.wrap_price}>
+            <h1 className={`${styles.title} ${styles.title_skeleton}`}></h1>
+            <p className={`${styles.price} ${styles.price_skeleton}`} />
+          </div>
+          <p className={`${styles.subtitle} ${styles.description_skeleton}`}></p>
+        </div>
+      </div>
+      <button className={`${styles.buy_btn} ${styles.skeleton}`} />
+    </div>
+  );
+}

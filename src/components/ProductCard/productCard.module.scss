@@ -104,3 +104,46 @@
     display: flex;
   }
 }
+
+.skeleton {
+  background-color: #E0E0E0;
+  background-image: linear-gradient(90deg, #E0E0E0 0%, #F8F8F8 50%, #E0E0E0 100%);
+  background-size: 200%;
+  animation: shimmer 2s infinite linear;
+  border-radius: 10px;
+  animation-delay: 0.3s; // Adicionando um pequeno atraso para um visual mais suave
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200%;
+    }
+    100% {
+      background-position: 200%;
+    }
+  }
+}
+.image_placeholder {
+  width: 100px;
+  height: 100px;
+}
+
+.Image_skeleton {
+  background: rgb(214, 214, 214);
+}
+
+.title_skeleton {
+  width: 70px;
+  height: 41px;
+  background: rgb(214, 214, 214);
+}
+
+.description_skeleton {
+  width: 100%;
+  height: 41px;
+  background: rgb(214, 214, 214);
+}
+
+.price_skeleton {
+  height: 30px;
+  background: rgb(214, 214, 214);
+}
